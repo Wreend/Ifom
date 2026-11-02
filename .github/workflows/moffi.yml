@@ -17,9 +17,11 @@ jobs:
       - run: npm install
 
       - run: npx playwright install --with-deps chromium
-
+      - name: Install Playwright Test
+        run: npm install @playwright/test
+      
       - name: Run bot
         env:
           MOFFI_EMAIL: ${{ secrets.MOFFI_EMAIL }}
           MOFFI_PASSWORD: ${{ secrets.MOFFI_PASSWORD }}
-        run: node moffi.js
+        run: npx playwright test moffi.js
