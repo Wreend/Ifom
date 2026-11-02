@@ -1,0 +1,25 @@
+name: Moffi Reservation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  reserve:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install
+
+      - run: npx playwright install --with-deps chromium
+
+      - name: Run bot
+        env:
+          MOFFI_EMAIL: ${{ secrets.MOFFI_EMAIL }}
+          MOFFI_PASSWORD: ${{ secrets.MOFFI_PASSWORD }}
+        run: node moffi.js
