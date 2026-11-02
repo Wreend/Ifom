@@ -3,6 +3,10 @@ name: Moffi Reservation
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '0 23 * * 1'
+    - cron: '0 23 * * 3'
+
 jobs:
   reserve:
     runs-on: ubuntu-latest
