@@ -54,9 +54,6 @@ const { chromium } = require('playwright');
   await page.getByRole('button', {
     name: 'Valider la réservation'
   }).click();
-  await page.getByRole('button', {
-    name: 'Finaliser la réservation'
-  }).click();
   await page.waitForLoadState('networkidle');
 
   await page.screenshot({
