@@ -3,8 +3,7 @@ const { chromium } = require('playwright');
 (async () => {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
-  await page.goto('https://app.moffi.io/fr/environnement/en_e82df6f5-0903-4515-a3ed-a99a9fe48d38/coworking/534109-Paris-14-personnes);
-  await page.goto('https://app.moffi.io/fr/environnement/en_e82df6f5-0903-4515-a3ed-a99a9fe48d38/connexion?redirect=https:%2F%2Fapp.moffi.io%2Ffr%2Fenvironnement%2Fen_e82df6f5-0903-4515-a3ed-a99a9fe48d38%2Fcoworking%2F534109-Paris-14-personnes);
+  await page.goto('https://app.moffi.io/fr/environnement/en_e82df6f5-0903-4515-a3ed-a99a9fe48d38/coworking/534109-Paris-14-personnes');
   await page.getByRole('button', { name: 'MOFFI Se connecter avec MOFFI' }).click();
   await page.getByRole('textbox', { name: 'Adresse mail' }).click();
   await page.getByRole('textbox', { name: 'Adresse mail' }).fill(process.env.MOFFI_EMAIL);
