@@ -54,7 +54,10 @@ const { chromium } = require('playwright');
   await page.getByRole('button', {
     name: 'Valider la réservation'
   }).click();
-  await page.waitForTimeout(5000);
+  await page.getByRole('button', {
+    name: 'Finaliser la réservation'
+  }).click();
+  await page.waitForLoadState('networkidle');
 
   await page.screenshot({
     path: '04-apres-validation.png',
@@ -62,6 +65,6 @@ const { chromium } = require('playwright');
   });
   
   console.log('Capture apres validation OK');
-  
+  await page.waitForTimeout(10000);
   await browser.close();
 })();
