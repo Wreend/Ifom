@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '0 23 * * 1'
-    - cron: '0 23 * * 3'
+    - cron: '*/5 * * * *'
+    # - cron: '0 23 * * 1'
+    # - cron: '0 23 * * 3'
     # - cron: '22 0 * * 1'
     # - cron: '22 0 * * 3'
 jobs:
