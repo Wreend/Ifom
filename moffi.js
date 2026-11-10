@@ -20,7 +20,7 @@ const { chromium } = require('playwright');
   });
   
   console.log('Capture apres connexion OK');
-  // Date cible = J+14
+  // Date cible = J+15
   const targetDate = new Date();
   targetDate.setDate(targetDate.getDate() + 14);
   
